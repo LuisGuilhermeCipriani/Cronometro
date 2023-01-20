@@ -3,13 +3,17 @@ import './estilo.css';
 
 function App(){
 
+    const [contador, setContador] = useState(0);
+    const [timer, setTimer] = useState(null);
+    const [botao, setBotao] = useState('INICIAR');
+
     return(
         <div className='container'>
             <h1>Cronômetro</h1>
             <img src={require('./assets/cronometro.png')} className='img'/>
-            <strong className='timer'>0.0</strong>
+            <strong className='timer'>{contador.toFixed(1)}</strong>
             <div className='acaoBtn'>
-                <a className='botao'>INICIAR</a>
+                <a className='botao'>{botao}</a>
                 <a className='botao'>LIMPAR</a>
             </div>
         </div>
