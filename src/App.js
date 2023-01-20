@@ -21,13 +21,18 @@ function App() {
     }
 
     function limpar() {
-
+        if (timer !== null) {
+            clearInterval(timer);
+            setTimer(null);
+        }
+        setContador(0);
+        setBotao('INICIAR');
     }
 
     return (
         <div className='container'>
             <h1>Cronômetro</h1>
-            <img src={require('./assets/cronometro.png')} className='img' />
+            <img src={require('./assets/cronometro.png')} className='img' alt='cronômetro'/>
             <strong className='timer'>{contador.toFixed(1)}</strong>
             <div className='acaoBtn'>
                 <a className='botao' onClick={iniciar}>{botao}</a>
